@@ -62,7 +62,7 @@ class BukuController extends Controller
     {
         $buku = Buku::findOrFail($id);
 
-        $after = $buku->update([
+        $buku->update([
             'kode_buku' => $request->kode_buku,
             'judul_buku' => $request->judul_buku,
             'penulis_buku' => $request->penulis_buku,
@@ -74,7 +74,7 @@ class BukuController extends Controller
         return response()->json([
             'message' => 'UPD',
             'status' => 200,
-            'data' => $after
+            'data' => $buku
         ]);
     }
 

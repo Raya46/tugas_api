@@ -64,7 +64,7 @@ class PelangganApiController extends Controller
     {
         $pelanggan = Pelanggan::findOrFail($id);
 
-        $after = $pelanggan->update([
+        $pelanggan->update([
             'kode_pelanggan' => $request->kode_pelanggan,
             'nama_pelanggan' => $request->nama_pelanggan,
             'jk_pelanggan' => $request->jk_pelanggan,
@@ -76,7 +76,7 @@ class PelangganApiController extends Controller
         return response()->json([
             'message' => 'UPD',
             'status' => 200,
-            'data' => $after
+            'data' => $pelanggan
         ]);
     }
 }

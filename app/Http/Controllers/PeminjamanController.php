@@ -62,7 +62,7 @@ class PeminjamanController extends Controller
     {
         $peminjaman = Peminjaman::findOrFail($id);
 
-        $after = $peminjaman->update([
+        $peminjaman->update([
             'tanggal_pinjam' => $request->tanggal_pinjam,
             'tanggal_kembali' => $request->tanggal_kembali,
             'id_buku' => $request->id_buku,
@@ -73,7 +73,7 @@ class PeminjamanController extends Controller
         return response()->json([
             'message' => 'UPD',
             'status' => 200,
-            'data' => $after
+            'data' => $peminjaman
         ]);
     }
 

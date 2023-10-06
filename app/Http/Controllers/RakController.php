@@ -60,7 +60,7 @@ class RakController extends Controller
     {
         $rak = Rak::findOrFail($id);
 
-        $after = $rak->update([
+        $rak->update([
             'nama_rak' => $request->nama_rak,
             'lokasi_rak' => $request->lokasi_rak,
             'id_buku' => $request->id_buku,
@@ -69,7 +69,7 @@ class RakController extends Controller
         return response()->json([
             'message' => 'UPD',
             'status' => 200,
-            'data' => $after
+            'data' => $rak
         ]);
     }
 

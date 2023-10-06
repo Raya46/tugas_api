@@ -63,7 +63,7 @@ class PengembalianController extends Controller
     {
         $pengembalian = Pengembalian::findOrFail($id);
 
-        $after = $pengembalian->update([
+        $pengembalian->update([
             'tanggal_pengembalian' => $request->tanggal_pengembalian,
             'nama_pengembalian' => $request->nama_pengembalian,
             'denda' => $request->denda,
@@ -75,7 +75,7 @@ class PengembalianController extends Controller
         return response()->json([
             'message' => 'UPD',
             'status' => 200,
-            'data' => $after
+            'data' => $pengembalian
         ]);
     }
 
