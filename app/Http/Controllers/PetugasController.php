@@ -62,7 +62,7 @@ class PetugasController extends Controller
     {
         $petugas = Petugas::findOrFail($id);
 
-        $after = $petugas->update([
+        $petugas->update([
             'nama_petugas' => $request->nama_petugas,
             'jabatan_petugas' => $request->jabatan_petugas,
             'no_telp_petugas' => $request->no_telp_petugas,
@@ -72,7 +72,7 @@ class PetugasController extends Controller
         return response()->json([
             'message' => 'UPD',
             'status' => 200,
-            'data' => $after
+            'data' => $petugas
         ]);
     }
 
